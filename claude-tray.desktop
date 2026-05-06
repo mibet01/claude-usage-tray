@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Claude Usage Tray
+Comment=Shows Claude.ai message usage in the system tray
+Exec=/home/miha/Documents/GitHub/claude-usage-tray/claude_tray.py
+Icon=applications-other
+Terminal=false
+Type=Application
+Categories=Utility;
+StartupNotify=false
