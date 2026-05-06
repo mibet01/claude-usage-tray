@@ -42,8 +42,8 @@ def make_icon(text, color="#ffffff"):
     img = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     draw = ImageDraw.Draw(img)
 
-    # Background pill (Claude-like color: #d97757 / #f3f0e8)
-    draw.rounded_rectangle([0, 0, W-1, H-1], radius=4, fill=(217, 119, 87, 230))
+    # Background pill
+    draw.rounded_rectangle([0, 0, W-1, H-1], radius=4, fill=(30, 30, 30, 210))
 
     try:
         font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", 13)
@@ -60,7 +60,7 @@ def make_icon(text, color="#ffffff"):
     y = (H - th) // 2 - 1
 
     # Shadow
-    draw.text((x+1, y+1), text, font=font, fill=(0, 0, 0, 150))
+    draw.text((x+1, y+1), text, font=font, fill=(0, 0, 0, 200))
     # Text
     draw.text((x, y), text, font=font, fill=color)
 
@@ -254,7 +254,7 @@ class ClaudeTray:
                 text = f"{used}/{limit}"
                 pct = int(used / limit * 100) if limit else 0
                 
-                color = "#ffffff"
+                color = "#d97757" # Terracotta by default
                 if pct > 80: color = "#ffeb3b" # Yellow
                 if pct > 95: color = "#ff6b6b" # Red
                 
