@@ -191,7 +191,7 @@ class ClaudeTray:
 
         except Exception as e:
             print(f"Fetch error: {e}")
-            GLib.idle_add(self._update_ui, None, "ERR")
+            GLib.idle_add(self._update_ui, None, str(e))
 
     def _update_ui(self, data, error):
         # clean dynamic items
